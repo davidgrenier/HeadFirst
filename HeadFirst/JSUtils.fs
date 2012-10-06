@@ -7,9 +7,9 @@ module Inline =
     [<Inline "new Date($date).toDateString()">]
     let formatDate date = X
 
-[<ReflectedDefinition>]
 [<AutoOpen>]
 module JSUtils =
     open IntelliFactory.WebSharper.Html
-
+    
+    [<ReflectedDefinition>]
     let (=<) (elem : Element) content = elem.Clear(); elem -< content |> ignore
