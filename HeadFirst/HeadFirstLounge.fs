@@ -1,15 +1,13 @@
-﻿module HeadFirst.Lounge
+﻿[<ReflectedDefinition>]
+module HeadFirst.Lounge
 
 open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
 
-[<ReflectedDefinition>]
 let core = Div []
 
-[<ReflectedDefinition>]
 let directions = []
 
-[<ReflectedDefinition>]
 let rec elixirs () =
     let drink header img description =
         [
