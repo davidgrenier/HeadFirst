@@ -5,6 +5,8 @@
     <Platform Condition="'$(Platform)' == ''">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b3176716-0dc8-4f5c-9aed-c183bb23347d}</ProjectGuid>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>pdbonly</DebugType>
@@ -23,8 +25,10 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DefineConstants />
-    <OutputPath>..\Web\bin</OutputPath>
+    <OutputPath>..\WebHost\bin\</OutputPath>
   </PropertyGroup>
+  <Import Project="WebSharper.targets" Condition="Exists('WebSharper.targets')" />
+  <Import Project="$(WEBSHARPER_HOME)/IntelliFactory.WebSharper.targets" />
   <ItemGroup>
     <Compile Include="JSUtils.fs" />
     <Compile Include="Server.fs" />
@@ -32,6 +36,8 @@
     <Compile Include="HeadFirstLounge.fs" />
     <Compile Include="TonysJournal.fs" />
     <Compile Include="Website.fs" />
+    <None Include="WebSharper.targets" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -40,6 +46,5 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
   </ItemGroup>
-  <Import Project="WebSharper.targets" Condition="Exists('WebSharper.targets')" />
-  <Import Project="$(WEBSHARPER_HOME)/IntelliFactory.WebSharper.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
