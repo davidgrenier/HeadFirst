@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HeadFirst", "HeadFirst\HeadFirst.fsproj", "{B3176716-0DC8-4F5C-9AED-C183BB23347D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHost", "WebHost\WebHost.csproj", "{6A7C06D1-CD9B-472D-94A4-D3C6D3D93B00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3176716-0DC8-4F5C-9AED-C183BB23347D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3176716-0DC8-4F5C-9AED-C183BB23347D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7C06D1-CD9B-472D-94A4-D3C6D3D93B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7C06D1-CD9B-472D-94A4-D3C6D3D93B00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
