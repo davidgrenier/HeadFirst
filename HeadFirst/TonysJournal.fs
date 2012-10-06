@@ -1,10 +1,10 @@
-﻿module HeadFirst.TonysJournal
+﻿[<ReflectedDefinition>]
+module HeadFirst.TonysJournal
 
 open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
 open Server.Tonys
 
-[<ReflectedDefinition>]
 let body () =
     let entries =
         journalEntries()

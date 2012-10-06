@@ -8,8 +8,8 @@ module Inline =
     let formatDate date = X
 
 [<AutoOpen>]
+[<ReflectedDefinition>]
 module JSUtils =
     open IntelliFactory.WebSharper.Html
     
-    [<ReflectedDefinition>]
     let (=<) (elem : Element) content = elem.Clear(); elem -< content |> ignore
