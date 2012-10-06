@@ -4,7 +4,7 @@
 module Inline =
     open IntelliFactory.WebSharper.Pervasives
 
-    [<Inline """new Date($date).toDateString()""">]
+    [<Inline "new Date($date).toDateString()">]
     let formatDate date = X
 
 [<ReflectedDefinition>]
