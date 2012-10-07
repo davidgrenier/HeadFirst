@@ -28,7 +28,7 @@ let stylesheets =
 let render site =
     let title, head =
         match site with
-        | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
+        | Starbuzz -> "Starbuzz Cofee - taost", ["Starbuzz"]
         | Lounge -> "Head First Lounge", []
         | Tonys -> "Tony's Journal", []
     PageContent <| fun ctx ->
