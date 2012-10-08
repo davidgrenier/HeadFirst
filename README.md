@@ -5,7 +5,8 @@ About
 -----
 
 WebSharper implementation of a web site based on Head First HTML and CSS, 2nd Edition.
-Deployed through App Harbor [here](http://davidgrenier.apphb.com/).
+=====
+[Deployed App Harbor](http://davidgrenier.apphb.com/)
 
 Contact
 -----
