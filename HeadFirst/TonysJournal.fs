@@ -12,23 +12,21 @@ let rec (|Eval|) = function
     | Normal (c :: rest) ->
         let rec aux acc = function
             | Normal (c :: rest) -> aux (c :: acc) rest
-            | Quote rest ->
-                let (Eval result) = '"' :: rest
+            | Quote rest | rest ->
+                let (Eval result) = rest
                 P [string acc |> Text] :: result
-            | _ -> [P [string acc |> Text]]
         aux [c] rest
-    | Quote rest ->
+    | Quote (_ :: rest) ->
         let rec aux acc = function
             | Normal (c :: rest) -> aux (c :: acc) rest
-            | (Quote rest) | (_ as rest) ->
+            | Quote (_ :: rest) | rest ->
                 let (Eval result) = rest
-                (BlockQuote [string acc |> Text]) :: result
+                BlockQuote [string acc |> Text] :: result
         aux [] rest
     | _ -> []
-and [<JavaScript>] (|Normal|Quote|Empty|) = function
-    | '"' :: rest -> Quote rest
-    | c :: _ as rest -> Normal rest
-    | _ -> Empty
+and [<JavaScript>] (|Normal|Quote|) = function
+    | '"' :: _ as rest -> Quote rest
+    | rest -> Normal rest
 
 [<JavaScript>]
 let body () =
