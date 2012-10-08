@@ -4,7 +4,33 @@ open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
 open Server.Tonys
 
-[<ReflectedDefinition>]
+[<JavaScript>]
+let string chars = System.String (chars |> List.rev |> List.toArray)
+
+[<JavaScript>]
+let rec (|Eval|) = function
+    | Normal (c :: rest) ->
+        let rec aux acc = function
+            | Normal (c :: rest) -> aux (c :: acc) rest
+            | Quote rest ->
+                let (Eval result) = '"' :: rest
+                P [string acc |> Text] :: result
+            | _ -> [P [string acc |> Text]]
+        aux [c] rest
+    | Quote rest ->
+        let rec aux acc = function
+            | Normal (c :: rest) -> aux (c :: acc) rest
+            | (Quote rest) | (_ as rest) ->
+                let (Eval result) = rest
+                (BlockQuote [string acc |> Text]) :: result
+        aux [] rest
+    | _ -> []
+and [<JavaScript>] (|Normal|Quote|Empty|) = function
+    | '"' :: rest -> Quote rest
+    | c :: _ as rest -> Normal rest
+    | _ -> Empty
+
+[<JavaScript>]
 let body () =
     let entries =
         journalEntries()
@@ -15,7 +41,8 @@ let body () =
                 yield H2 [formatDate date |> Text]
                 if image.IsSome then
                     yield Img [Src ("images/" + image.Value + ".jpg")]
-                yield P [Text description]                
+                let (Eval result) = List.ofSeq description
+                yield! result
             ])
         |> Seq.concat
     Div [
