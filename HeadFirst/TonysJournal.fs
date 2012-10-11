@@ -31,8 +31,8 @@ let rec (|Eval|) = function
         (Br [] :> _) :: result
     | _ -> []
 and [<JavaScript>] (|Normal|Quote|CRLF|) = function
-    | ('\r'|'\n') :: rest
-    | '\r' :: '\n' :: rest -> CRLF rest
+    | '\r' :: '\n' :: rest
+    | ('\r'|'\n') :: rest -> CRLF rest
     | '"' :: _ as rest -> Quote rest
     | rest -> Normal rest
 
