@@ -11,7 +11,30 @@ type Pages =
     | SideDish
     | Home
 
-    with static member Default = Home
+[<JavaScript>]
+let siteInfo = function
+    | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
+    | Lounge -> "Head First Lounge", []
+    | Tonys -> "Tony's Journal", []
+    | SideDish -> "Side Dishes", []
+    | Home -> "Home", []
+
+module Home =
+    open IntelliFactory.WebSharper.Html
+    open Microsoft.FSharp.Reflection
+    
+    [<Rpc>]
+    let pages() =
+        FSharpType.GetUnionCases(typeof<Pages>)
+        |> Array.map (fun x -> FSharpValue.MakeUnion(x, [||]) |> unbox, x.Name)
+        |> Array.filter (fun (case, _) -> case <> Home)
+
+    [<JavaScript>]
+    let body () =
+        pages ()
+        |> Seq.map (fun (case, target) -> [A [Text (siteInfo case |> fst); HRef target]; Br []] )
+        |> Seq.concat
+        |> Div
 
 type ClientSite(p) =
     inherit Web.Control()
@@ -26,17 +49,10 @@ type ClientSite(p) =
         | Home -> Home.body ()
         :> _
 
-let stylesheets =
-    List.map (fun ref -> Link [Rel "stylesheet"; Attributes.HRef (sprintf "Stylesheets/%s.css" ref)])
+let stylesheets = List.map (fun ref -> Link [Rel "stylesheet"; Attributes.HRef (sprintf "Stylesheets/%s.css" ref)])
 
 let render site =
-    let title, head =
-        match site with
-        | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
-        | Lounge -> "Head First Lounge", []
-        | Tonys -> "Tony's Journal", []
-        | SideDish -> "Side Dishes", []
-        | Home -> "Home", []
+    let title, head = siteInfo site
     PageContent <| fun ctx ->
     {
         Page.Default with
@@ -50,7 +66,7 @@ type Website() =
         member this.Actions = []
         member this.Sitelet =
             {
-                Router = Router.Table [Pages.Default, "/"] <|> Router.Infer()
+                Router = Router.Table [Pages.Home, "/"] <|> Router.Infer()
                 Controller = { Handle = render }
             }
 
