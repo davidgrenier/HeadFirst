@@ -14,7 +14,7 @@ let rec (|Eval|) = function
         let rec aux acc = function
             | CRLF rest -> (text acc) :: (Br [] :> _) :: (aux [] rest)
             | Normal (c :: rest) -> aux (c :: acc) rest
-            | _ -> []
+            | Normal [] -> [text acc]
         aux [c] rest
     | CRLF rest ->
         let (Eval result) = rest

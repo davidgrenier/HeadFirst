@@ -63,6 +63,7 @@ Of eternity."
                     "digital camera"
                     "and a protein bar"
                 ]
-                Description "Just the essentials. As Lao Tzu would have said,\"A journey of a thousand miles begins with one Segay.\""
+                Description "Just the essentials. As Lao Tzu would have said"
+                Quote "A journey of a thousand miles begins with one Segay."
             ]
         ]
