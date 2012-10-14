@@ -37,12 +37,8 @@ module Tonys =
             date 8 20, [
                 Image "Segway2"; Description "Well I made it 1200 miles already, and I passed through some interesting places on the way:"
                 Ordered [
-                    "Walla Walla, WA"
-                    "Magic City, ID"
-                    "Bountiful, UT"
-                    "Last Chance, CO"
-                    "Why, AZ"
-                    "Truth or Consequences, NM"
+                    "Walla Walla, WA"; "Magic City, ID"; "Bountiful, UT"
+                    "Last Chance, CO"; "Why, AZ"; "Truth or Consequences, NM"
                 ]
             ]
             date 7 14, [
@@ -57,12 +53,7 @@ Of eternity."
             date 6 2, [
                 Image "Segway1"
                 Description "My first day of the trip! I can't believe finally got everything packed and ready to go. Because I'm on a Segway, I wasn't able to bring a whole lot with me:"
-                Unordered [
-                    "cell phone"
-                    "iPod"
-                    "digital camera"
-                    "and a protein bar"
-                ]
+                Unordered ["cell phone"; "iPod"; "digital camera"; "and a protein bar"]
                 Description "Just the essentials. As Lao Tzu would have said"
                 Quote "A journey of a thousand miles begins with one Segay."
             ]

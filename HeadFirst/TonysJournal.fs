@@ -35,14 +35,13 @@ let body () =
         |> Seq.map (fun (date, content) ->
             H2 [formatDate date |> Text]
             :: (content |> List.map (function
-                    | Description description ->
-                        P [Text description]
+                    | Description description -> P [Text description]
                     | Quote quote ->
                         let (Eval result) = List.ofSeq quote
                         BlockQuote result
                     | Image image -> Img [Src ("images/" + image + ".jpg")]
-                    | Ordered elems -> elems |> lis |> OL
-                    | Unordered elems -> elems |> lis |> UL))
+                    | Ordered elems -> lis elems |> OL
+                    | Unordered elems -> lis elems |> UL))
             )
         |> Seq.concat
     Div [
