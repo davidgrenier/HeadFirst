@@ -21,20 +21,48 @@ module Starbuzz =
         ]
 
 module Tonys =
-    type Date = System.DateTime
-    type Image = string
-    type Description = string
-    type JournalEntry =
-        Entry of Date * Image option * Description
+    type Entry =
+        | Image of string
+        | Description of string
+        | Ordered of string list
+        | Unordered of string list
+        | Quote of string
+    type JournalEntry = System.DateTime * Entry list
+        
+    let date m j = System.DateTime(2012, m, j)
 
     [<Rpc>]
     let journalEntries() =
         [
-            Entry (Date(2012, 8, 20), Some "Segway2", "Well I made it 1200 miles already, and I passed through some interesting places on teh way: Walla Walla, WA, Magic City, ID, Bountiful, UT, Last Chance, CO, Why, AZ and Truth or Consequences, NM.")
-            Entry (Date(2012, 7, 14), None, "I saw some Burma Shave style signs on the side of the road today:\"Passing cars,
+            date 8 20, [
+                Image "Segway2"; Description "Well I made it 1200 miles already, and I passed through some interesting places on the way:"
+                Ordered [
+                    "Walla Walla, WA"
+                    "Magic City, ID"
+                    "Bountiful, UT"
+                    "Last Chance, CO"
+                    "Why, AZ"
+                    "Truth or Consequences, NM"
+                ]
+            ]
+            date 7 14, [
+                Description "I saw some Burma Shave style signs on the side of the road today:"
+                Quote "Passing cars,
 When you can't see,
 May get you,
 A glimpse,
-Of eternity.\" I definitely won't be passing any cars.")
-            Entry (Date(2012, 6, 2), Some "Segway1", "My first day of the trip! I can't believe finally got everything packed and ready to go. Because I'm on a Segway, I wasn't able to bring a whole lot with me: cell phone, iPod, digital camera, and a protein bar. Just the essentials. As Lao Tzu would have said,\"A journey of a thousand miles begins with one Segay.\"")
+Of eternity."
+                Description "I definitely won't be passing any cars."
+            ]
+            date 6 2, [
+                Image "Segway1"
+                Description "My first day of the trip! I can't believe finally got everything packed and ready to go. Because I'm on a Segway, I wasn't able to bring a whole lot with me:"
+                Unordered [
+                    "cell phone"
+                    "iPod"
+                    "digital camera"
+                    "and a protein bar"
+                ]
+                Description "Just the essentials. As Lao Tzu would have said,\"A journey of a thousand miles begins with one Segay.\""
+            ]
         ]

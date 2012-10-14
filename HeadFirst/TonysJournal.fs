@@ -12,44 +12,38 @@ let text chars =
 let rec (|Eval|) = function
     | Normal (c :: rest) ->
         let rec aux acc = function
-            | CRLF rest -> (text acc) :: (aux [] rest)
+            | CRLF rest -> (text acc) :: (Br [] :> _) :: (aux [] rest)
             | Normal (c :: rest) -> aux (c :: acc) rest
-            | Quote rest | rest ->
-                let (Eval result) = rest
-                (text acc) :: result
+            | _ -> []
         aux [c] rest
-    | Quote (_ :: rest) ->
-        let rec aux elems acc = function
-            | CRLF rest -> (aux (Br [] :> IPagelet :: (text acc) :: elems) [] rest)
-            | Normal (c :: rest) -> aux elems (c :: acc) rest
-            | Quote (_ :: rest) | rest ->
-                let (Eval result) = rest
-                BlockQuote ((text acc) :: elems |> List.rev) :> IPagelet :: result
-        aux [] [] rest
     | CRLF rest ->
         let (Eval result) = rest
         (Br [] :> _) :: result
     | _ -> []
-and [<JavaScript>] (|Normal|Quote|CRLF|) = function
+and [<JavaScript>] (|CRLF|Normal|) = function
     | '\r' :: '\n' :: rest
     | ('\r'|'\n') :: rest -> CRLF rest
-    | '"' :: _ as rest -> Quote rest
     | rest -> Normal rest
 
 [<JavaScript>]
 let body () =
+    let lis = List.map (fun x -> LI [Text x])
     let entries =
         journalEntries()
-        |> List.sortBy (fun (Entry(d, _, _)) -> d)
+        |> List.sortBy fst
         |> List.rev
-        |> Seq.map (fun (Entry(date, image, description)) ->
-            let (Eval result) = List.ofSeq description
-            [
-                yield H2 [formatDate date |> Text]
-                if image.IsSome then
-                    yield Img [Src ("images/" + image.Value + ".jpg")]
-                yield P result
-            ])
+        |> Seq.map (fun (date, content) ->
+            H2 [formatDate date |> Text]
+            :: (content |> List.map (function
+                    | Description description ->
+                        P [Text description]
+                    | Quote quote ->
+                        let (Eval result) = List.ofSeq quote
+                        BlockQuote result
+                    | Image image -> Img [Src ("images/" + image + ".jpg")]
+                    | Ordered elems -> elems |> lis |> OL
+                    | Unordered elems -> elems |> lis |> UL))
+            )
         |> Seq.concat
     Div [
         yield H1 [Text "Segay'n USA"]
