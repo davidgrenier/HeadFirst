@@ -8,8 +8,10 @@ type Pages =
     | Starbuzz
     | Lounge
     | Tonys
+    | Lists
+    | Home
 
-    with static member Default = Tonys
+    with static member Default = Home
 
 type ClientSite(p) =
     inherit Web.Control()
@@ -20,6 +22,8 @@ type ClientSite(p) =
         | Starbuzz -> Starbuzz.body ()
         | Lounge -> Lounge.body ()
         | Tonys -> TonysJournal.body ()
+        | Lists -> Lists.body ()
+        | Home -> Home.body ()
         :> _
 
 let stylesheets =
@@ -31,6 +35,8 @@ let render site =
         | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
         | Lounge -> "Head First Lounge", []
         | Tonys -> "Tony's Journal", []
+        | Lists -> "A definition list", []
+        | Home -> "Home", []
     PageContent <| fun ctx ->
     {
         Page.Default with

@@ -37,8 +37,10 @@
     <Compile Include="JSUtils.fs" />
     <Compile Include="Server.fs" />
     <Compile Include="Starbuzz.fs" />
-    <Compile Include="HeadFirstLounge.fs" />
+    <Compile Include="Lounge.fs" />
     <Compile Include="TonysJournal.fs" />
+    <Compile Include="Lists.fs" />
+    <Compile Include="Home.fs" />
     <Compile Include="Website.fs" />
     <None Include="WebSharper.targets" />
     <None Include="packages.config" />
