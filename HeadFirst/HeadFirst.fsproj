@@ -39,7 +39,7 @@
     <Compile Include="Starbuzz.fs" />
     <Compile Include="Lounge.fs" />
     <Compile Include="TonysJournal.fs" />
-    <Compile Include="Lists.fs" />
+    <Compile Include="SideDish.fs" />
     <Compile Include="Home.fs" />
     <Compile Include="Website.fs" />
     <None Include="WebSharper.targets" />

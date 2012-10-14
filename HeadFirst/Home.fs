@@ -10,5 +10,5 @@ let body () =
         yield! a "Starbuzz" "Starbuzz"
         yield! a "Lounge" "Lounge"
         yield! a "Tonys Journal" "Tonys"
-        yield! a "Lists" "Lists"
+        yield! a "Side Dishes" "SideDish"
     ]

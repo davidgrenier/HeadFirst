@@ -1,4 +1,4 @@
-﻿module HeadFirst.Lists
+﻿module HeadFirst.SideDish
 
 open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
@@ -25,4 +25,5 @@ let body () =
             ]
             li "Call mom"
         ]
+        P [Text "Here's the html element: <html></html>"]
     ]

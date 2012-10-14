@@ -8,7 +8,7 @@ type Pages =
     | Starbuzz
     | Lounge
     | Tonys
-    | Lists
+    | SideDish
     | Home
 
     with static member Default = Home
@@ -22,7 +22,7 @@ type ClientSite(p) =
         | Starbuzz -> Starbuzz.body ()
         | Lounge -> Lounge.body ()
         | Tonys -> TonysJournal.body ()
-        | Lists -> Lists.body ()
+        | SideDish -> SideDish.body ()
         | Home -> Home.body ()
         :> _
 
@@ -35,7 +35,7 @@ let render site =
         | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
         | Lounge -> "Head First Lounge", []
         | Tonys -> "Tony's Journal", []
-        | Lists -> "A definition list", []
+        | SideDish -> "Side Dishes", []
         | Home -> "Home", []
     PageContent <| fun ctx ->
     {
