@@ -3,7 +3,7 @@
 open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
 
-[<JavaScript>]
+[<JS>]
 let body () =
     let d term def = [DT [Text term]; DD [Text def]]
     let li text = LI [Text text]

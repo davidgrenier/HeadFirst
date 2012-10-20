@@ -11,7 +11,7 @@ type Pages =
     | SideDish
     | Home
 
-[<JavaScript>]
+[<JS>]
 let siteInfo = function
     | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
     | Lounge -> "Head First Lounge", []
@@ -29,7 +29,7 @@ module Home =
         |> Array.map (fun x -> FSharpValue.MakeUnion(x, [||]) |> unbox, x.Name)
         |> Array.filter (fst >> ((<>) Home))
 
-    [<JavaScript>]
+    [<JS>]
     let body () =
         pages ()
         |> Seq.map (fun (case, target) -> [A [Text (siteInfo case |> fst); HRef target]; Br []] )
@@ -39,7 +39,7 @@ module Home =
 type ClientSite(p) =
     inherit Web.Control()
 
-    [<JavaScript>]
+    [<JS>]
     override this.Body =
         match p with
         | Starbuzz -> Starbuzz.body ()

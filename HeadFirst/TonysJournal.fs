@@ -4,11 +4,11 @@ open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.Html
 open Server.Tonys
 
-[<JavaScript>]
+[<JS>]
 let text chars =
     Text <| System.String (chars |> List.rev |> List.toArray)
 
-[<JavaScript>]
+[<JS>]
 let multiLine content =
     let rec (|Eval|) = function
         | Normal (c :: rest) ->
@@ -28,7 +28,7 @@ let multiLine content =
     let (Eval result) = List.ofSeq content
     result
 
-[<JavaScript>]
+[<JS>]
 let body () =
     let lis = List.map (fun x -> LI [Text x])
     let entries =
