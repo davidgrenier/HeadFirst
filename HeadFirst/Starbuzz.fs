@@ -12,8 +12,7 @@ let body () =
         ]
     Div [
         yield H1 [Text "Starbuzz Coffee Beverages"]
-        for drink in drinks() do
-            yield! formatDrink drink
+        yield! drinks() |> Seq.map formatDrink |> Seq.concat
     ]
 
 [<ReflectedDefinition>]

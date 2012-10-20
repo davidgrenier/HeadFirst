@@ -27,7 +27,7 @@ module Home =
     let pages() =
         FSharpType.GetUnionCases(typeof<Pages>)
         |> Array.map (fun x -> FSharpValue.MakeUnion(x, [||]) |> unbox, x.Name)
-        |> Array.filter (fun (case, _) -> case <> Home)
+        |> Array.filter (fst >> ((<>) Home))
 
     [<JavaScript>]
     let body () =
