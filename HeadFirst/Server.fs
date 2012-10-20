@@ -21,12 +21,18 @@ module Starbuzz =
         ]
 
 module Tonys =
+    type DescriptionElement =
+        | Textual of string
+        | SmallQuote of string
+
     type Entry =
         | Image of string
-        | Description of string
+        | Description of DescriptionElement list
         | Ordered of string list
         | Unordered of string list
         | Quote of string
+        | InlineQuote of string
+
     type JournalEntry = System.DateTime * Entry list
         
     let date m j = System.DateTime(2012, m, j)
@@ -35,26 +41,28 @@ module Tonys =
     let journalEntries() =
         [
             date 8 20, [
-                Image "Segway2"; Description "Well I made it 1200 miles already, and I passed through some interesting places on the way:"
+                Image "Segway2"; Description [Textual "Well I made it 1200 miles already, and I passed through some interesting places on the way:"]
                 Ordered [
                     "Walla Walla, WA"; "Magic City, ID"; "Bountiful, UT"
                     "Last Chance, CO"; "Why, AZ"; "Truth or Consequences, NM"
                 ]
             ]
             date 7 14, [
-                Description "I saw some Burma Shave style signs on the side of the road today:"
+                Description [Textual "I saw some Burma Shave style signs on the side of the road today:"]
                 Quote "Passing cars,
 When you can't see,
 May get you,
 A glimpse,
 Of eternity."
-                Description "I definitely won't be passing any cars."
+                Description [Textual "I definitely won't be passing any cars."]
             ]
             date 6 2, [
                 Image "Segway1"
-                Description "My first day of the trip! I can't believe finally got everything packed and ready to go. Because I'm on a Segway, I wasn't able to bring a whole lot with me:"
+                Description [Textual "My first day of the trip! I can't believe finally got everything packed and ready to go. Because I'm on a Segway, I wasn't able to bring a whole lot with me:"]
                 Unordered ["cell phone"; "iPod"; "digital camera"; "and a protein bar"]
-                Description "Just the essentials. As Lao Tzu would have said"
-                Quote "A journey of a thousand miles begins with one Segay."
+                Description [
+                        Textual "Just the essentials. As Lao Tzu would have said, "
+                        SmallQuote "A journey of a thousand miles begins with one Segay."
+                    ]
             ]
         ]

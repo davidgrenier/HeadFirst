@@ -26,4 +26,5 @@ let body () =
             li "Call mom"
         ]
         P [Text "Here's the html element: <html></html>"]
+        Code [Text "let x = 3 in x * x"]
     ]
