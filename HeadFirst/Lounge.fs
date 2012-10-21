@@ -13,7 +13,7 @@ let directions () = []
 let rec elixirs () =
     let drink (header, img, description) =
         [
-            H2 [Text header]
+            h2 header
             P [Img [Src ("images/" + img)]] -- Text description
         ]            
     [
@@ -37,7 +37,7 @@ and [<JS>] lounge () =
             a "#Elixirs" "elixirs" None |>! inject core elixirs :> _
             Text ", conversation and maybe a game or two of Dance Dance Revolution. Wireless access is always provided; BYOWS (Bring Your Own Web Server)."
         ]
-        H2 [Text "Directions"]
+        h2 "Directions"
         P [
             Text "You'll find us right in the center of downtown Webville. If you need help finding us, check out our "
             a "#Directions" "detailed directions" None |>! inject core directions :> _

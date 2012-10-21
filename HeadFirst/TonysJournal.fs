@@ -36,7 +36,7 @@ let body () =
         |> List.sortBy fst
         |> List.rev
         |> Seq.collect (fun (date, content) ->
-            H2 [formatDate date |> Text]
+            h2 (formatDate date)
             :: (content |> List.map (function
                     | Description elems ->
                         elems

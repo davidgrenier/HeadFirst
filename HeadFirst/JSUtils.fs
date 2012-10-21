@@ -32,3 +32,6 @@ module JSUtils =
 
     [<JS>]
     let h1 title = H1 [Text title]
+
+    [<JS>]
+    let h2 title = H2 [Text title]
