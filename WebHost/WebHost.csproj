@@ -51,6 +51,7 @@
     <Content Include="Images\green.jpg" />
     <Content Include="Images\lightblue.jpg" />
     <Content Include="Images\red.jpg" />
+    <Content Include="Images\seattle-half.jpg" />
     <Content Include="Images\seattle.jpg" />
     <Content Include="Images\segway1.jpg" />
     <Content Include="Images\segway2.jpg" />
