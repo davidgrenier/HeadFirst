@@ -21,7 +21,11 @@ let rec starbuzz () =
             A [HRef "#Mission"; Text "Read about our Mission"] |>! inject core mission
             Br []
         ] -- Text "Read the "
-        -- A [HRef "http://wickedlysmart.com/buzz"; Text "Caffeine Buzz"]
+        -- A [
+            Attr.Title "Read all about caffeine on the Buzz"
+            HRef "http://wickedlysmart.com/buzz"
+            Text "Caffeine Buzz"
+        ]
     ]
 
 and [<JS>] mission () =

@@ -31,7 +31,6 @@ module Tonys =
         | Ordered of string list
         | Unordered of string list
         | Quote of string
-        | InlineQuote of string
 
     type JournalEntry = System.DateTime * Entry list
         
