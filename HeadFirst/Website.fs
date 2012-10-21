@@ -11,6 +11,7 @@ type Pages =
     | SideDish
     | Home
     | Sharpen
+    | MyPod
 
 [<JS>]
 let siteInfo = function
@@ -20,6 +21,7 @@ let siteInfo = function
     | SideDish -> "Side Dishes", []
     | Home -> "Home", []
     | Sharpen -> "Sharpen your pencil trivia", []
+    | MyPod -> "myPod", ["myPod"]
 
 module Home =
     open IntelliFactory.WebSharper.Html
@@ -49,6 +51,7 @@ type ClientSite(p) =
         | SideDish -> SideDish.body ()
         | Home -> Home.body ()
         | Sharpen -> Sharpen.body ()
+        | MyPod -> MyPod.body ()
         :> _
 
 let stylesheets = List.map (fun ref -> Link [Rel "stylesheet"; Attributes.HRef (sprintf "Stylesheets/%s.css" ref)])
