@@ -21,7 +21,7 @@ let rec starbuzz () =
             a "#Mission" "Read about our Mission" (Some "Read more about Starbuzz Coffee's important mission.") |>! inject core mission
             Br []
         ] -- Text "Read the "
-        -- a "http://wickedlysmart.com/buzz#Coffee" "Read all about caffeine on the Buzz" (Some "Caffeine Buzz")
+        -- openLink "http://wickedlysmart.com/buzz#Coffee" "Read all about caffeine on the Buzz" (Some "Caffeine Buzz")
     ]
 
 and [<JS>] mission () =

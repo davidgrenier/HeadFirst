@@ -24,5 +24,8 @@ module JSUtils =
     let a ref text =
         let a = A [HRef ref; Text text]
         function
-        | Some title -> a -- Attr.Title title
         | None -> a
+        | Some title -> a -- Attr.Title title
+
+    [<JS>]
+    let openLink ref text title = a ref text title -- Attr.Target "_blank"
