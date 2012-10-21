@@ -10,10 +10,7 @@ let core = Div []
 [<JS>]
 let rec starbuzz () =
     let formatDrink { Name = n; Price = p; Description = d } =
-        [
-            H2 [n + ", $" + (string p) |> Text]
-            P [Text d; Attr.Id "houseblend"]
-        ]
+        [H2 [n + ", $" + (string p) |> Text]; P [Text d; Attr.Id "houseblend"]]
     [
         yield H1 [Text "Starbuzz Coffee Beverages"]
         yield! drinks() |> Seq.collect formatDrink

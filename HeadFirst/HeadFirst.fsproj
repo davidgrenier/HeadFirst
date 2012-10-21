@@ -40,6 +40,7 @@
     <Compile Include="Lounge.fs" />
     <Compile Include="TonysJournal.fs" />
     <Compile Include="SideDish.fs" />
+    <Compile Include="Sharpen.fs" />
     <Compile Include="Website.fs" />
     <None Include="WebSharper.targets" />
     <None Include="packages.config" />
