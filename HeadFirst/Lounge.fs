@@ -26,7 +26,7 @@ let rec elixirs () =
             "Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time."
         yield! drink "Cranberry Antioxidant Blast" "red.jpg"
             "Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir."
-        yield A [HRef "#"; Text "Back to the Lounge"] |>! inject core lounge
+        yield a "#" "Back to the Lounge" None |>! inject core lounge
     ]
     
 and [<JS>] lounge () =
@@ -35,13 +35,13 @@ and [<JS>] lounge () =
         Img [Src "Images/drinks.gif"]
         P [
             Text "Join us any evening for refreshing "
-            A [HRef "#Elixirs"; Text "elixirs"] |>! inject core elixirs :> _
+            a "#Elixirs" "elixirs" None |>! inject core elixirs :> _
             Text ", conversation and maybe a game or two of Dance Dance Revolution. Wireless access is always provided; BYOWS (Bring Your Own Web Server)."
         ]
         H2 [Text "Directions"]
         P [
             Text "You'll find us right in the center of downtown Webville. If you need help finding us, check out our "
-            A [HRef "#Directions"; Text "detailed directions"] |>! inject core directions :> _
+            a "#Directions" "detailed directions" None |>! inject core directions :> _
             Text ". Come join us!"
         ]
     ]

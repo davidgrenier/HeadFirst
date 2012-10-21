@@ -16,16 +16,12 @@ let rec starbuzz () =
         ]
     [
         yield H1 [Text "Starbuzz Coffee Beverages"]
-        yield! drinks() |> Seq.map formatDrink |> Seq.concat
+        yield! drinks() |> Seq.collect formatDrink
         yield P [
-            A [HRef "#Mission"; Text "Read about our Mission"] |>! inject core mission
+            a "#Mission" "Read about our Mission" (Some "Read more about Starbuzz Coffee's important mission.") |>! inject core mission
             Br []
         ] -- Text "Read the "
-        -- A [
-            Attr.Title "Read all about caffeine on the Buzz"
-            HRef "http://wickedlysmart.com/buzz"
-            Text "Caffeine Buzz"
-        ]
+        -- a "http://wickedlysmart.com/buzz" "Read all about caffeine on the Buzz" (Some "Caffeine Buzz")
     ]
 
 and [<JS>] mission () =

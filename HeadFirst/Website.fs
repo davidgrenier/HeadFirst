@@ -32,8 +32,7 @@ module Home =
     [<JS>]
     let body () =
         pages ()
-        |> Seq.map (fun (case, target) -> [A [Text (siteInfo case |> fst); HRef target]; Br []] )
-        |> Seq.concat
+        |> Seq.collect (fun (case, target) -> [a target (siteInfo case |> fst) None; Br []] )
         |> Div
 
 type ClientSite(p) =
