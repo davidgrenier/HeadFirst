@@ -18,10 +18,12 @@ let rec starbuzz () =
         yield H1 [Text "Starbuzz Coffee Beverages"]
         yield! drinks() |> Seq.collect formatDrink
         yield P [
-            a "#Mission" "Read about our Mission" (Some "Read more about Starbuzz Coffee's important mission.") |>! inject core mission
-            Br []
-        ] -- Text "Read the "
-        -- openLink "http://wickedlysmart.com/buzz#Coffee" "Read all about caffeine on the Buzz" (Some "Caffeine Buzz")
+            Text "Read about "
+            a "#Mission" "our Mission" (Some "Read more about Starbuzz Coffee's important mission.") |>! inject core mission :> _
+            Br [] :> _
+            Text "Read the "
+            openLink "http://wickedlysmart.com/buzz#Coffee" "Read all about caffeine on the Buzz" (Some "Caffeine Buzz") :> _
+        ]
     ]
 
 and [<JS>] mission () =
