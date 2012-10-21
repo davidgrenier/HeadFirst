@@ -35,7 +35,7 @@ let body () =
         journalEntries()
         |> List.sortBy fst
         |> List.rev
-        |> Seq.map (fun (date, content) ->
+        |> Seq.collect (fun (date, content) ->
             H2 [formatDate date |> Text]
             :: (content |> List.map (function
                     | Description elems ->
@@ -49,7 +49,6 @@ let body () =
                     | Ordered elems -> lis elems |> OL
                     | Unordered elems -> lis elems |> UL))
             )
-        |> Seq.concat
     Div [
         yield H1 [Text "Segay'n USA"]
         yield P [ Text "Documenting my trip around the US on my very own Segway!"]        

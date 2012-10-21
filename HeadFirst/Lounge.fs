@@ -11,21 +11,20 @@ let directions () = []
 
 [<JS>]
 let rec elixirs () =
-    let drink header img description =
+    let drink (header, img, description) =
         [
             H2 [Text header]
-            P [Text description] -- Img [Src ("images/" + img)]
+            P [Img [Src ("images/" + img)]] -- Text description
         ]            
     [
         yield H1 [Text "Our Elixirs"]
-        yield! drink "Green Tea Cooler" "green.jpg"
-            "Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root."
-        yield! drink "Rapsberry Ice Concentration" "lightblue.jpg"
-            "Combining raspberry juice with lemon grass, citrus peel adn rosehips, this icy drink will make your mind feel clear and crips."
-        yield! drink "Blueberry Bliss Elixir" "blue.jpg"
-            "Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time."
-        yield! drink "Cranberry Antioxidant Blast" "red.jpg"
-            "Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir."
+        yield!
+            [
+                "Green Tea Cooler", "green.jpg", "Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root."
+                "Rapsberry Ice Concentration", "lightblue.jpg", "Combining raspberry juice with lemon grass, citrus peel adn rosehips, this icy drink will make your mind feel clear and crips."
+                "Blueberry Bliss Elixir", "blue.jpg", "Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time."
+                "Cranberry Antioxidant Blast", "red.jpg", "Wake up to the flavors of cranberry and hibiscus in this vitamin C rich elixir."
+            ] |> Seq.collect drink
         yield a "#" "Back to the Lounge" None |>! inject core lounge
     ]
     
