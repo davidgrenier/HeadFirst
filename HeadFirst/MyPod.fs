@@ -17,4 +17,8 @@ let body () =
 
         h2 "Seattle, Washington"
         P [Text "Me and my iPod in Seattle! You can see the Space Needle. You can't see the 628 coffee shops."]
+
+        P [
+            Img [Src "images/seattle.jpg"; Width "100%"]
+        ]
     ]
