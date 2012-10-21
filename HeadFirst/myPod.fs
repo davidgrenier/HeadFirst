@@ -6,7 +6,7 @@ open IntelliFactory.WebSharper
 [<JS>]
 let body () =
     Div [
-        H1 [Text "Welcome to myPod"]
+        h1 "Welcome to myPod"
         P [Text "Welcome to the place to show off your iPod, wherever you might be.
         Wanna join the fun? All you need is any iPod from the early classic 
         iPod to the latest iPod Nano, the smallest iPod Shuffle to the largest 

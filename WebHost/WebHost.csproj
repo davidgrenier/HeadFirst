@@ -53,6 +53,7 @@
     <Content Include="Images\red.jpg" />
     <Content Include="Images\segway1.jpg" />
     <Content Include="Images\segway2.jpg" />
+    <Content Include="Stylesheets\myPod.css" />
     <Content Include="Stylesheets\Starbuzz.css" />
     <Content Include="Images\drinks.gif" />
     <Content Include="Scripts\*.js" />

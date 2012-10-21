@@ -29,3 +29,6 @@ module JSUtils =
 
     [<JS>]
     let openLink ref text title = a ref text title -- Attr.Target "_blank"
+
+    [<JS>]
+    let h1 title = H1 [Text title]

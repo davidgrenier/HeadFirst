@@ -12,7 +12,7 @@ let rec starbuzz () =
     let formatDrink { Name = n; Price = p; Description = d } =
         [H2 [n + ", $" + (string p) |> Text]; P [Text d; Attr.Id "houseblend"]]
     [
-        yield H1 [Text "Starbuzz Coffee Beverages"]
+        yield h1 "Starbuzz Coffee Beverages"
         yield! drinks() |> Seq.collect formatDrink
         yield P [
             Text "Read about "
@@ -25,7 +25,7 @@ let rec starbuzz () =
 
 and [<JS>] mission () =
     [
-        H1 [Text "Starbuzz Coffee's Mission"]
+        h1 "Starbuzz Coffee's Mission"
         P [Text "To provide all the caffeine that you need to power your life."]
         P [Text "Just drink it."]
     ]

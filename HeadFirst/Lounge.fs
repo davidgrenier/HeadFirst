@@ -17,7 +17,7 @@ let rec elixirs () =
             P [Img [Src ("images/" + img)]] -- Text description
         ]            
     [
-        yield H1 [Text "Our Elixirs"]
+        yield h1 "Our Elixirs"
         yield!
             [
                 "Green Tea Cooler", "green.jpg", "Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root."
@@ -30,7 +30,7 @@ let rec elixirs () =
     
 and [<JS>] lounge () =
     [
-        H1 [Text "Welcome to the New and Improved Head First Lounge"]
+        h1 "Welcome to the New and Improved Head First Lounge"
         Img [Src "Images/drinks.gif"]
         P [
             Text "Join us any evening for refreshing "
