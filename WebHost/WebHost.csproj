@@ -47,12 +47,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Images\applestore.jpg" />
     <Content Include="Images\blue.jpg" />
+    <Content Include="Images\britain.jpg" />
     <Content Include="Images\green.jpg" />
     <Content Include="Images\lightblue.jpg" />
     <Content Include="Images\red.jpg" />
     <Content Include="Images\seattle-half.jpg" />
     <Content Include="Images\seattle.jpg" />
+    <Content Include="Images\seattle_classic.jpg" />
+    <Content Include="Images\seattle_downtown.jpg" />
+    <Content Include="Images\seattle_shuffle.jpg" />
     <Content Include="Images\segway1.jpg" />
     <Content Include="Images\segway2.jpg" />
     <Content Include="Stylesheets\myPod.css" />

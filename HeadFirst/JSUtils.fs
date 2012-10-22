@@ -35,3 +35,9 @@ module JSUtils =
 
     [<JS>]
     let h2 title = H2 [Text title]
+
+    [<JS>]
+    let img src = Img [Src src]
+
+    [<JS>]
+    let pText text = P [Text text]
