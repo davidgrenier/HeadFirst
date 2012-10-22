@@ -53,7 +53,7 @@
     <Content Include="Images\green.jpg" />
     <Content Include="Images\lightblue.jpg" />
     <Content Include="Images\red.jpg" />
-    <Content Include="Images\seattle-half.jpg" />
+    <Content Include="Images\seattle_half.jpg" />
     <Content Include="Images\seattle.jpg" />
     <Content Include="Images\seattle_classic.jpg" />
     <Content Include="Images\seattle_downtown.jpg" />

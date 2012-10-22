@@ -4,7 +4,8 @@ open IntelliFactory.WebSharper.Html
 open IntelliFactory.WebSharper
 
 [<JS>]
-let body () =
+let body () =    
+    let seattle src = image ("seattle_" + src + ".jpg")
     Div [
         h1 "Welcome to myPod"
         pText "Welcome to the place to show off your iPod, wherever you might be.
@@ -18,10 +19,10 @@ let body () =
         pText "Me and my iPod in Seattle! You can see the Space Needle. You can't see the 628 coffee shops."
 
         P [
-            image "seattle-half.jpg"
-            image "seattle_classic.jpg" -- Alt "My video iPod in Seattle, WA"
-            image "seattle_shuffle.jpg" -- Alt "A classic iPod in Seattle, WA"
-            image "seattle_downtown.jpg" -- Alt "An iPod in downtown Seattle, WA"
+            seattle "half"
+            seattle "classic" -- Alt "My video iPod in Seattle, WA"
+            seattle "shuffle" -- Alt "A classic iPod in Seattle, WA"
+            seattle "downtown" -- Alt "An iPod in downtown Seattle, WA"
         ]
 
         h2 "Birmingham, England"
