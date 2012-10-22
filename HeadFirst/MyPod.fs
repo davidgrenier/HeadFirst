@@ -18,10 +18,10 @@ let body () =
         pText "Me and my iPod in Seattle! You can see the Space Needle. You can't see the 628 coffee shops."
 
         P [
-            img "images/seattle-half.jpg"
-            img "images/seattle_classic.jpg" -- Alt "My video iPod in Seattle, WA"
-            img "images/seattle_shuffle.jpg" -- Alt "A classic iPod in Seattle, WA"
-            img "images/seattle_downtown.jpg" -- Alt "An iPod in downtown Seattle, WA"
+            image "seattle-half.jpg"
+            image "seattle_classic.jpg" -- Alt "My video iPod in Seattle, WA"
+            image "seattle_shuffle.jpg" -- Alt "A classic iPod in Seattle, WA"
+            image "seattle_downtown.jpg" -- Alt "An iPod in downtown Seattle, WA"
         ]
 
         h2 "Birmingham, England"
@@ -30,8 +30,8 @@ let body () =
             red British telephone box!"
 
         P [
-            img "images/britain.jpg" -- Alt "An iPod in Birmingham at a telephone box"
+            image "britain.jpg" -- Alt "An iPod in Birmingham at a telephone box"
             Br []
-            img "images/applestore.jpg" -- Alt "An iPod at the Birmingham Apple store"
+            image "applestore.jpg" -- Alt "An iPod at the Birmingham Apple store"
         ]
     ]
