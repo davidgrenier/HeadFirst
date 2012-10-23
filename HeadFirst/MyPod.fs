@@ -4,14 +4,17 @@ open IntelliFactory.WebSharper.Html
 open IntelliFactory.WebSharper
 
 [<JS>]
-let body () =    
-    Div [
+let core = Div []
+
+[<JS>]
+let rec body () =
+    core -< [
         h1 "Welcome to myPod"
         pText "Welcome to the place to show off your iPod, wherever you might be.
-            Wanna join the fun? All you need is any iPod from the early classic 
-            iPod to the latest iPod Nano, the smallest iPod Shuffle to the largest 
+            Wanna join the fun? All you need is any iPod from the early classic
+            iPod to the latest iPod Nano, the smallest iPod Shuffle to the largest
             iPod Video, and a digital camera. Just take a snapshot of your iPod in
-            your favorite location and we'll be glad to post it on myPod. So, what 
+            your favorite location and we'll be glad to post it on myPod. So, what
             are you waiting for?"
 
         h2 "Seattle, Washington"
@@ -33,4 +36,10 @@ let body () =
             thumbnail "britain" -- Alt "An iPod in Birmingham at a telephone box"
             thumbnail "applestore" -- Alt "An iPod at the Birmingham Apple store"
         ]
+    ]
+
+and openImage title src =
+    [
+        h1 title
+        image src
     ]

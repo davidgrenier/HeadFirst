@@ -45,7 +45,7 @@ let body () =
                             | Textual t -> Text t)
                         |> P
                     | Quote quote -> BlockQuote (multiLine quote)
-                    | Image img -> image (img + ".jpg")
+                    | Image img -> image img
                     | Ordered elems -> lis elems |> OL
                     | Unordered elems -> lis elems |> UL))
             )
