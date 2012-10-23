@@ -18,8 +18,7 @@ let rec elixirs () =
         ]            
     [
         yield h1 "Our Elixirs"
-        yield!
-            [
+        yield! [
                 "Green Tea Cooler", "green", "Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root."
                 "Rapsberry Ice Concentration", "lightblue", "Combining raspberry juice with lemon grass, citrus peel adn rosehips, this icy drink will make your mind feel clear and crips."
                 "Blueberry Bliss Elixir", "blue", "Blueberries and cherry essence mixed into a base of elderflower herb tea will put you in a relaxed state of bliss in no time."

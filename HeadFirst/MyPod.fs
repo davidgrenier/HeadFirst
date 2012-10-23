@@ -8,6 +8,15 @@ let core = Div []
 
 [<JS>]
 let rec body () =
+    let buildImageLink title image =
+        let aImg = A [HRef "#"] -- thumbnail image |>! inject core (fun () -> openImage title image)
+        function
+        | Some alt -> aImg -- Alt alt
+        | None -> aImg
+
+    let seattle = buildImageLink "Seattle Ferry"
+    let birmingham = buildImageLink "In Birmingham"
+
     core -< [
         h1 "Welcome to myPod"
         pText "Welcome to the place to show off your iPod, wherever you might be.
@@ -20,12 +29,12 @@ let rec body () =
         h2 "Seattle, Washington"
         pText "Me and my iPod in Seattle! You can see the Space Needle. You can't see the 628 coffee shops."
 
-        P [
-            thumbnail "seattle_half"
-            thumbnail "seattle_classic" -- Alt "My video iPod in Seattle, WA"
-            thumbnail "seattle_shuffle" -- Alt "A classic iPod in Seattle, WA"
-            thumbnail "seattle_downtown" -- Alt "An iPod in downtown Seattle, WA"
-        ]
+        [
+            "seattle_half", None
+            "seattle_classic", (Some "My video iPod in Seattle, WA")
+            "seattle_shuffle", (Some "A classic iPod in Seattle, WA")
+            "seattle_downtown", (Some "An iPod in downtown Seattle, WA")
+        ] |> Seq.map (fun x -> seattle <|| x) |> P
 
         h2 "Birmingham, England"
         pText "Here are some iPod photos around Birmingham. We've obviously got some  
@@ -33,13 +42,9 @@ let rec body () =
             red British telephone box!"
 
         P [
-            thumbnail "britain" -- Alt "An iPod in Birmingham at a telephone box"
-            thumbnail "applestore" -- Alt "An iPod at the Birmingham Apple store"
+            birmingham "britain"  (Some "An iPod in Birmingham at a telephone box")
+            birmingham "applestore" (Some "An iPod at the Birmingham Apple store")
         ]
     ]
 
-and openImage title src =
-    [
-        h1 title
-        image src
-    ]
+and [<JS>] openImage title src = [h1 title; image src]
