@@ -34,7 +34,7 @@ let rec body () =
             "seattle_classic", (Some "My video iPod in Seattle, WA")
             "seattle_shuffle", (Some "A classic iPod in Seattle, WA")
             "seattle_downtown", (Some "An iPod in downtown Seattle, WA")
-        ] |> Seq.map (fun x -> seattle <|| x) |> P
+        ] |> Seq.map ((<||) seattle) |> P
 
         h2 "Birmingham, England"
         pText "Here are some iPod photos around Birmingham. We've obviously got some  
@@ -42,7 +42,7 @@ let rec body () =
             red British telephone box!"
 
         P [
-            birmingham "britain"  (Some "An iPod in Birmingham at a telephone box")
+            birmingham "britain" (Some "An iPod in Birmingham at a telephone box")
             birmingham "applestore" (Some "An iPod at the Birmingham Apple store")
         ]
     ]
