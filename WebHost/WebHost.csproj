@@ -66,6 +66,12 @@
     <Content Include="Scripts\*.js" />
     <Content Include="Content\**\*.*" />
     <Content Include="Themes\**\*.*" />
+    <Content Include="Thumbnails\applestore.png" />
+    <Content Include="Thumbnails\britain.png" />
+    <Content Include="Thumbnails\seattle_classic.png" />
+    <Content Include="Thumbnails\seattle_downtown.png" />
+    <Content Include="Thumbnails\seattle_half.png" />
+    <Content Include="Thumbnails\seattle_shuffle.png" />
     <Content Include="Views\**\*.*" />
     <Content Include="*.asax" />
     <Compile Include="*.asax.cs" />
@@ -101,6 +107,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VisualStudioVersion)' != '10.0'AND Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />

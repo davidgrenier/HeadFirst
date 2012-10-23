@@ -40,7 +40,10 @@ module JSUtils =
     let img src = Img [Src src]
 
     [<JS>]
-    let image src = img ("images/" + src)
+    let image src = img ("Images/" + src)
+
+    [<JS>]
+    let thumbnail src = img ("Thumbnails/" + src + ".png")
 
     [<JS>]
     let pText text = P [Text text]
