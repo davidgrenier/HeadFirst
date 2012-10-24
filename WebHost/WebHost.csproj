@@ -47,22 +47,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Images\applestore.jpg" />
-    <Content Include="Images\blue.jpg" />
-    <Content Include="Images\britain.jpg" />
-    <Content Include="Images\green.jpg" />
-    <Content Include="Images\lightblue.jpg" />
-    <Content Include="Images\red.jpg" />
-    <Content Include="Images\seattle_half.jpg" />
-    <Content Include="Images\seattle.jpg" />
-    <Content Include="Images\seattle_classic.jpg" />
-    <Content Include="Images\seattle_downtown.jpg" />
-    <Content Include="Images\seattle_shuffle.jpg" />
-    <Content Include="Images\segway1.jpg" />
-    <Content Include="Images\segway2.jpg" />
+    <Content Include="Images\applestore.png" />
+    <Content Include="Images\blue.png" />
+    <Content Include="Images\britain.png" />
+    <Content Include="Images\drinks.png" />
+    <Content Include="Images\green.png" />
+    <Content Include="Images\lightblue.png" />
+    <Content Include="Images\red.png" />
+    <Content Include="Images\seattle.png" />
+    <Content Include="Images\seattle_classic.png" />
+    <Content Include="Images\seattle_downtown.png" />
+    <Content Include="Images\seattle_half.png" />
+    <Content Include="Images\seattle_shuffle.png" />
+    <Content Include="Images\segway1.png" />
+    <Content Include="Images\segway2.png" />
     <Content Include="Stylesheets\myPod.css" />
     <Content Include="Stylesheets\Starbuzz.css" />
-    <Content Include="Images\drinks.gif" />
     <Content Include="Scripts\*.js" />
     <Content Include="Content\**\*.*" />
     <Content Include="Themes\**\*.*" />
