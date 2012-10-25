@@ -35,8 +35,9 @@ let rec body () =
             "seattle_half", None
             "seattle_classic", (Some "My video iPod in Seattle, WA")
             "seattle_shuffle", (Some "A classic iPod in Seattle, WA")
-            "seattle_downtown", (Some "An iPod in downtown Seattle, WA")
-        ] |> Seq.map ((<||) seattle) |> P
+        ] |> Seq.map ((<||) seattle)
+        |> Seq.append [buildImageLink "Seattle Downtown" "seattle_downtown" (Some "An iPod in downtown Seattle, WA")]
+        |> P
 
         h2 "Birmingham, England"
         pText "Here are some iPod photos around Birmingham. We've obviously got some  
