@@ -18,6 +18,8 @@ let rec body () =
     let birmingham = buildImageLink "In Birmingham"
 
     core -< [
+        P [image "mypod"]
+
         h1 "Welcome to myPod"
         pText "Welcome to the place to show off your iPod, wherever you might be.
             Wanna join the fun? All you need is any iPod from the early classic

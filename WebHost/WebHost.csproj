@@ -53,6 +53,7 @@
     <Content Include="Images\drinks.png" />
     <Content Include="Images\green.png" />
     <Content Include="Images\lightblue.png" />
+    <Content Include="Images\mypod.png" />
     <Content Include="Images\red.png" />
     <Content Include="Images\seattle.png" />
     <Content Include="Images\seattle_classic.png" />
