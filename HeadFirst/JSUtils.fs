@@ -37,7 +37,7 @@ module JSUtils =
     let h2 title = H2 [Text title]
 
     [<JS>]
-    let img src = Img [Src src]
+    let img src alt = Img [Src src; Alt alt]
 
     [<JS>]
     let image src = img ("Images/" + src + ".png")

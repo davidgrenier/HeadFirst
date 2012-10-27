@@ -14,7 +14,7 @@ let rec elixirs () =
     let drink (header, img, description) =
         [
             h2 header
-            P [image img] -- Text description
+            P [image img img] -- Text description
         ]            
     [
         yield h1 "Our Elixirs"
@@ -30,7 +30,7 @@ let rec elixirs () =
 and [<JS>] lounge () =
     [
         h1 "Welcome to the New and Improved Head First Lounge"
-        image "drinks"
+        image "drinks" "Our drinks"
         P [
             Text "Join us any evening for refreshing "
             a "#Elixirs" "elixirs" None |>! inject core elixirs :> _

@@ -8,17 +8,14 @@ let core = Div []
 
 [<JS>]
 let rec body () =
-    let buildImageLink title image =
-        let aImg = A [HRef "#"] -- thumbnail image |>! inject core (fun () -> openImage title image)
-        function
-        | Some alt -> aImg -- Alt alt
-        | None -> aImg
+    let buildImageLink title image alt =
+        A [HRef "#"] -- thumbnail image alt |>! inject core (fun () -> openImage title image alt)
 
     let seattle = buildImageLink "Seattle Ferry"
     let birmingham = buildImageLink "In Birmingham"
 
     core -< [
-        P [image "mypod"]
+        P [image "mypod" "Our MyPod logo"]
 
         h1 "Welcome to myPod"
         pText "Welcome to the place to show off your iPod, wherever you might be.
@@ -32,11 +29,11 @@ let rec body () =
         pText "Me and my iPod in Seattle! You can see the Space Needle. You can't see the 628 coffee shops."
 
         [
-            "seattle_half", None
-            "seattle_classic", (Some "My video iPod in Seattle, WA")
-            "seattle_shuffle", (Some "A classic iPod in Seattle, WA")
+            "seattle_half", "iPod in Seattle, WA"
+            "seattle_classic", "My video iPod in Seattle, WA"
+            "seattle_shuffle", "A classic iPod in Seattle, WA"
         ] |> Seq.map ((<||) seattle)
-        |> Seq.append [buildImageLink "Seattle Downtown" "seattle_downtown" (Some "An iPod in downtown Seattle, WA")]
+        |> Seq.append [buildImageLink "Seattle Downtown" "seattle_downtown" "An iPod in downtown Seattle, WA"]
         |> P
 
         h2 "Birmingham, England"
@@ -45,9 +42,9 @@ let rec body () =
             red British telephone box!"
 
         P [
-            birmingham "britain" (Some "An iPod in Birmingham at a telephone box")
-            birmingham "applestore" (Some "An iPod at the Birmingham Apple store")
+            birmingham "britain" "An iPod in Birmingham at a telephone box"
+            birmingham "applestore" "An iPod at the Birmingham Apple store"
         ]
     ]
 
-and [<JS>] openImage title src = [h1 title; image src]
+and [<JS>] openImage title src alt = [h1 title; image src alt]
