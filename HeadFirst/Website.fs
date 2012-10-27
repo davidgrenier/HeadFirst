@@ -62,7 +62,7 @@ let render site =
     {
         Page.Default with
             Title = Some title
-            Head = stylesheets head
+            Head = Tags.Meta [CharSet "utf-8"] :: stylesheets head
             Body = [ Div [new ClientSite (site)] ]
     }
 
