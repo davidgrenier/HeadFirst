@@ -7,7 +7,17 @@ open IntelliFactory.WebSharper.Html
 let core = Div []
 
 [<JS>]
-let directions () = []
+let directions () =
+    [
+        "Take the 305 S exit to Webville - go 0.4 mi"
+        "Continue on 305 - go 12 mi"
+        "Turn right at Structure Ave N - go 0.6 mi"
+        "Turn right and head toward Structure Ave N - go 0.0 mi"
+        "Turn right at Structure Ave N - go 0.7 mi"
+        "Continue on Structure Ave S - go 0.2 mi"
+        "Turn right at SW Presentation Way - go 0.0 mi"
+    ] |> List.map (fun x -> P [Text x])
+    |> (fun x -> H1 [Text "Directions"] :: x)
 
 [<JS>]
 let rec elixirs () =

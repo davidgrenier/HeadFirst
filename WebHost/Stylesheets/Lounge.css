@@ -1,8 +1,12 @@
-﻿P {
+﻿p {
     color: maroon;
 }
 
-H1, H2 {
+h1, h1 {
     font-family: sans-serif;
     color: gray;
+}
+
+h1 {
+    border-bottom: 1px solid black;
 }
