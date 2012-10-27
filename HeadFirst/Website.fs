@@ -16,9 +16,9 @@ type Pages =
 [<JS>]
 let siteInfo = function
     | Starbuzz -> "Starbuzz Cofee", ["Starbuzz"]
-    | Lounge -> "Head First Lounge", []
+    | Lounge -> "Head First Lounge", ["Lounge"]
     | Tonys -> "Tony's Journal", []
-    | SideDish -> "Side Dishes", []
+    | SideDish -> "Side Dishes", ["SideDish"]
     | Home -> "Home", []
     | Sharpen -> "Sharpen your pencil trivia", []
     | MyPod -> "myPod", ["myPod"]

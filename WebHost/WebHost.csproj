@@ -62,7 +62,9 @@
     <Content Include="Images\seattle_shuffle.png" />
     <Content Include="Images\segway1.png" />
     <Content Include="Images\segway2.png" />
+    <Content Include="Stylesheets\Lounge.css" />
     <Content Include="Stylesheets\myPod.css" />
+    <Content Include="Stylesheets\SideDish.css" />
     <Content Include="Stylesheets\Starbuzz.css" />
     <Content Include="Scripts\*.js" />
     <Content Include="Content\**\*.*" />
