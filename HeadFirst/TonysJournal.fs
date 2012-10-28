@@ -50,6 +50,6 @@ let body () =
                     | Unordered elems -> lis elems |> UL))
             )
     Div [
-        yield h1 "Segay'n USA"
-        yield P [Text "Documenting my trip around the US on my very own Segway!"]        
+        h1 "Segay'n USA"
+        p "Documenting my trip around the US on my very own Segway!"
     ] -< entries

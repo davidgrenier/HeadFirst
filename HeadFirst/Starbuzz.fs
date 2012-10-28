@@ -9,8 +9,8 @@ let core = Div []
 
 [<JS>]
 let rec starbuzz () =
-    let formatDrink { Name = n; Price = p; Description = d } =
-        [h2 (n + ", $" + (string p)); P [Text d; Attr.Id "houseblend"]]
+    let formatDrink { Name = n; Price = price; Description = d } =
+        [h2 (n + ", $" + (string price)); p d -- Attr.Id "houseblend"]
     [
         yield h1 "Starbuzz Coffee Beverages"
         yield! drinks() |> Seq.collect formatDrink
@@ -26,8 +26,8 @@ let rec starbuzz () =
 and [<JS>] mission () =
     [
         h1 "Starbuzz Coffee's Mission"
-        P [Text "To provide all the caffeine that you need to power your life."]
-        P [Text "Just drink it."]
+        p "To provide all the caffeine that you need to power your life."
+        p "Just drink it."
     ]
 
 and [<JS>] body () = core -< starbuzz ()
