@@ -44,7 +44,9 @@ and [<JS>] lounge () =
         P [
             Text "Join us any evening for refreshing "
             a "#Elixirs" "elixirs" None |>! inject core elixirs :> _
-            Text ", conversation and maybe a game or two of Dance Dance Revolution. Wireless access is always provided; BYOWS (Bring Your Own Web Server)."
+            Text ", conversation and maybe a game or two of "
+            em "Dance Dance Revolution"
+            Text ". Wireless access is always provided; BYOWS (Bring Your Own Web Server)."
         ]
         h2 "Directions"
         P [

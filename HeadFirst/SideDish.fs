@@ -27,7 +27,7 @@ let body () =
         ]
         P [
             Text "Here's the html "
-            Em [Text "element"] :> _
+            em "element"
             Text ": <html></html>"
         ]
         Code [Text "let x = 3 in x * x"]

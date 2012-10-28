@@ -47,3 +47,6 @@ module JSUtils =
 
     [<JS>]
     let p text = P [Text text]
+
+    [<JS>]
+    let em text = Em [Text text] :> IPagelet

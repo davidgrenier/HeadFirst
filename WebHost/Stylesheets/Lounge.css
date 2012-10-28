@@ -1,12 +1,19 @@
-﻿p {
+﻿body {
+    font-family: sans-serif;
+}
+
+p {
     color: maroon;
 }
 
 h1, h2 {
-    font-family: sans-serif;
     color: gray;
 }
 
 h1 {
     border-bottom: 1px solid black;
+}
+
+em {
+    font-family: serif;
 }
