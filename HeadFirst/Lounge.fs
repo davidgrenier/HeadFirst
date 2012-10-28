@@ -24,7 +24,7 @@ let rec elixirs () =
     let drink (header, img, description) =
         [
             h2 header
-            P [image img img] -- Text description
+            P [image img img] -- Text description -- Attr.Class img
         ]            
     [
         yield h1 "Our Elixirs"
