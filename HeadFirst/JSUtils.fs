@@ -40,7 +40,7 @@ module JSUtils =
     let img src alt = Img [Src src; Alt alt]
 
     [<JS>]
-    let image src = img ("Images/" + src + ".png")
+    let image src = img ("Images/" + src + ".webp")
 
     [<JS>]
     let thumbnail src = img ("Thumbnails/" + src + ".png")
