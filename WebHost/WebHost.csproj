@@ -47,21 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Images\applestore.png" />
-    <Content Include="Images\blue.png" />
-    <Content Include="Images\britain.png" />
-    <Content Include="Images\drinks.png" />
-    <Content Include="Images\green.png" />
-    <Content Include="Images\lightblue.png" />
-    <Content Include="Images\mypod.png" />
-    <Content Include="Images\red.png" />
-    <Content Include="Images\seattle.png" />
-    <Content Include="Images\seattle_classic.png" />
-    <Content Include="Images\seattle_downtown.png" />
-    <Content Include="Images\seattle_half.png" />
-    <Content Include="Images\seattle_shuffle.png" />
-    <Content Include="Images\segway1.png" />
-    <Content Include="Images\segway2.png" />
     <Content Include="Stylesheets\Lounge.css" />
     <Content Include="Stylesheets\myPod.css" />
     <Content Include="Stylesheets\SideDish.css" />
@@ -110,7 +95,23 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\applestore.webp" />
+    <Content Include="Images\blue.webp" />
+    <Content Include="Images\britain.webp" />
+    <Content Include="Images\drinks.webp" />
+    <Content Include="Images\green.webp" />
+    <Content Include="Images\lightblue.webp" />
+    <Content Include="Images\mypod.webp" />
+    <Content Include="Images\red.webp" />
+    <Content Include="Images\seattle.webp" />
+    <Content Include="Images\seattle_classic.webp" />
+    <Content Include="Images\seattle_downtown.webp" />
+    <Content Include="Images\seattle_half.webp" />
+    <Content Include="Images\seattle_shuffle.webp" />
+    <Content Include="Images\segway1.webp" />
+    <Content Include="Images\segway2.webp" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VisualStudioVersion)' != '10.0'AND Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
