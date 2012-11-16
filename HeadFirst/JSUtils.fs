@@ -43,7 +43,7 @@ module JSUtils =
     let image src = img ("Images/" + src + ".webp")
 
     [<JS>]
-    let thumbnail src = img ("Thumbnails/" + src + ".png")
+    let thumbnail src = img ("Thumbnails/" + src + ".webp")
 
     [<JS>]
     let p text = P [Text text]
