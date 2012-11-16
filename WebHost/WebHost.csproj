@@ -54,12 +54,6 @@
     <Content Include="Scripts\*.js" />
     <Content Include="Content\**\*.*" />
     <Content Include="Themes\**\*.*" />
-    <Content Include="Thumbnails\applestore.png" />
-    <Content Include="Thumbnails\britain.png" />
-    <Content Include="Thumbnails\seattle_classic.png" />
-    <Content Include="Thumbnails\seattle_downtown.png" />
-    <Content Include="Thumbnails\seattle_half.png" />
-    <Content Include="Thumbnails\seattle_shuffle.png" />
     <Content Include="Views\**\*.*" />
     <Content Include="*.asax" />
     <Compile Include="*.asax.cs" />
@@ -111,6 +105,14 @@
     <Content Include="Images\seattle_shuffle.webp" />
     <Content Include="Images\segway1.webp" />
     <Content Include="Images\segway2.webp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Thumbnails\applestore.webp" />
+    <Content Include="Thumbnails\britain.webp" />
+    <Content Include="Thumbnails\seattle_classic.webp" />
+    <Content Include="Thumbnails\seattle_downtown.webp" />
+    <Content Include="Thumbnails\seattle_half.webp" />
+    <Content Include="Thumbnails\seattle_shuffle.webp" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
