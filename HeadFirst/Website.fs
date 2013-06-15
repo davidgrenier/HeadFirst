@@ -75,5 +75,5 @@ type Website() =
                 Controller = { Handle = render }
             }
 
-[<assembly: WebsiteAttribute(typeof<Website>)>]
+[<assembly: Website(typeof<Website>)>]
 do ()

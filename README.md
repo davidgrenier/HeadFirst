@@ -1,10 +1,6 @@
 # Head First HTML
 
-## About
-
 WebSharper implementation of a web site based on Head First HTML and CSS, 2nd Edition.
-
-[Deployed on App Harbor](http://davidgrenier.apphb.com/)
 
 ## Contact
 
